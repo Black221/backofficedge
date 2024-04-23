@@ -18,7 +18,7 @@ const ListCandidates = () => {
             url: "/parrainage/electeurs",
             requestConfig: []
         })
-    }, [fetch]);
+    }, []);
 
     useEffect(() => {
         if (response) {
