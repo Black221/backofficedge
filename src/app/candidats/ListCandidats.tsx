@@ -2,7 +2,7 @@ import { Table } from "../../components/Table";
 import { Pagination } from "../../components/Pagination";
 import { useState, useEffect } from "react";
 import axios from "../../api/axios";
-import useAxios from "../../hooks/useAxios.js";
+import useAxios from "../../hooks/useAxios";
 
 const ListCandidates = () => {
 
@@ -17,7 +17,7 @@ const ListCandidates = () => {
             url: "/parrainage/electeurs",
             requestConfig: []
         })
-    }, []);
+    }, [fetch]);
 
     useEffect(() => {
         if (response) {
@@ -25,6 +25,18 @@ const ListCandidates = () => {
             setData(response.items);
         }
     }, [response]);
+
+    useEffect(() => {
+        if (error) {
+            console.log('====================================');
+            console.log(error);
+            console.log('====================================');
+        }
+    }, [error]);
+
+    useEffect(() => {
+        console.log(load);
+    }, [load]);
 
     const extract =(data: any[], colums: string[]): any => {
         const arr: string[] = []

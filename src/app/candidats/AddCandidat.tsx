@@ -18,11 +18,7 @@ const AddCandidate = () => {
     const [party, setParty] = useState<string>("");
     const [slogan, setSlogan] = useState<string>("");
     const [url, setUrl] = useState<string>("");
-    const [photo, setPhoto] = useState<string>("");
 
-    const isValid = () => {
-        return null;
-    }
 
     const stepSubmit1 = async () => {
 
@@ -42,7 +38,7 @@ const AddCandidate = () => {
             partie_politique: party,
             slogan: slogan,
             programme: url,
-            photo: photo
+            photo: "photo"
         }
 
         await stepFetch3({

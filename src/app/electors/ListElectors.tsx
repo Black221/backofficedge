@@ -2,7 +2,7 @@ import { Table } from "../../components/Table";
 import { Pagination } from "../../components/Pagination";
 import { useEffect, useState } from "react";
 import axios from "../../api/axios";
-import useAxios from "../../hooks/useAxios.js";
+import useAxios from "../../hooks/useAxios";
 
 
 const ListElectors = () => {
@@ -27,7 +27,16 @@ const ListElectors = () => {
                 }
             ]
         })
-    }, []);
+    }, [fetch]);
+
+    useEffect(() => {
+        if (error) {
+            console.log('====================================');
+            console.log(error);
+            console.log('====================================');
+        }
+    }, [error]);
+
 
     useEffect(() => {
         if (response) {

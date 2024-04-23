@@ -3,10 +3,11 @@ import {useState} from "react";
 
 export const Pagination = ({page, length, dataCount} : any) => {
     
-    const [nbToRender, setNbToRender] = useState(10);
+    const nbToRender = 10;
     const [pageList, setPageList] = useState(5);
     const setPage = (p: any) => {
-
+        console.log(p);
+        setPageList(p);
     }
 
     return(<>
@@ -35,8 +36,9 @@ export const Pagination = ({page, length, dataCount} : any) => {
                 {page > (pageList - 1) / 2 + 1 && <li>
                     <button className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">...</button>
                 </li>}
-                {  Array.from (Array(pageList), ((e, index) => {
+                {  Array.from (Array(pageList), ((a:any,index) => {
                     if (index + page - (pageList - 1) / 2 > 0 && index + page - (pageList - 1) / 2 < Math.floor(dataCount / nbToRender) - 1)
+                        console.log(a);
                         return (
                             <li key={index}>
                                 <button onClick={() => {

@@ -1,4 +1,3 @@
-import {useState} from "react";
 import DropLink from "../components/DropLink.tsx";
 
 
@@ -24,9 +23,6 @@ export interface ISidebar {
 }
 export const Sidebar = (props: ISidebar) => {
 
-    const [dropAction, setDropAction] = useState(true);
-    const [dropDashboard, setDropDashboard] = useState(true);
-
     return (<>
 
         <div className={`w-64 bg-white`}>
@@ -48,6 +44,5 @@ export const Sidebar = (props: ISidebar) => {
                 </div>
             </div>
         </div>
-
     </>)
 }

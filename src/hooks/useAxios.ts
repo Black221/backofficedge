@@ -6,12 +6,17 @@ const useAxios = () => {
     const [response, setResponse] = useState(null);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-    const [controller, setController] = useState(null);
+    const [controller, setController] = useState<AbortController>();
 
 
-    const axiosFetch = async (
-        configObj 
-    ) => {
+    const axiosFetch: any = async (
+        configObj: {
+            axiosInstance: any,
+            method: string,
+            url: string,
+            requestConfig?: any[]
+        }
+    )  => {
 
         setLoading(true);
 
@@ -28,9 +33,9 @@ const useAxios = () => {
 
         await  axiosInstance[method.toLowerCase()](url,
             ...requestConfig
-        ).then( (res) => {
+        ).then( (res: any) => {
             setResponse(res.data);
-        }).catch( (err) => {
+        }).catch( (err: any) => {
             setError(err?.response?.data || "Error Server");
         }).finally (() => {
             setLoading(false);
