@@ -8,29 +8,6 @@ import { Sidebar, ISidebar } from "../components/Sidebar";
 const AppLayout = () => {
 
     
-	const [prevScrollpos, setPrevScrollpos] = useState(window.scrollY);
-    const [top, setTop] = useState(0);
-    const [open, toggle] = useState(false);
-
-	const navRef = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			const currentScrollPos = window.scrollY;
-			if (prevScrollpos > currentScrollPos) {
-				setTop(0); 
-			} else {
-				setTop(-50); 
-			}
-			setPrevScrollpos(currentScrollPos);
-		};
-		window.addEventListener('scroll', handleScroll);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, [prevScrollpos]);
-
     return (<>
         <main className={`flex h-screen w-screen justify-start overflow-hidden relative`}>
 

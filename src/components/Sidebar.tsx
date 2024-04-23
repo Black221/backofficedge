@@ -9,14 +9,14 @@ export interface ISidebar {
         link: HTMLElement,
         logo: any,
     };
-    droplist : [{
+    droplist : {
         group: string,
-        link: [{
+        link: {
             to: string,
             name: string,
             icon: any,
-        }]
-    }];
+        }[]
+    }[];
     foot: {
         link: HTMLElement,
         icon: any,
