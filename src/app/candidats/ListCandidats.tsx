@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Table } from "../../components/Table";
 import { Pagination } from "../../components/Pagination";
 import { useState, useEffect } from "react";

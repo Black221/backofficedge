@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Table } from "../../components/Table";
 import { Pagination } from "../../components/Pagination";
 import { useEffect, useState } from "react";
@@ -27,7 +28,7 @@ const ListElectors = () => {
                 }
             ]
         })
-    }, [fetch]);
+    }, []);
 
     useEffect(() => {
         if (error) {
