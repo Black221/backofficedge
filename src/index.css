@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.service {
+	transition: all 0.4s ease-in-out;
+	opacity: 0.5;
+}
+
+.service-active {
+	width: 256px;
+	background-color: #f3f4f6;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	opacity: 1;
+}
+
+.agro-banner {
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+}
+
+.agro-banner:hover {
+	transform: scale(1.5,1.5);
+    -webkit-transform: scale(1.5,1.5);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #f21919; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #f74e4e; 
+}
