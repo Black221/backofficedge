@@ -28,8 +28,8 @@ export const Login = () => {
                 </div>
                 <div className={`space-y-2 md:w-96 w-80`}>
 
-                    <InputForm type={"text"} label={LoginData.login} placeholder={LoginData.login} regex={LOGIN_REGEX} />
-                    <InputForm type={"password"} label={LoginData.password} placeholder={LoginData.password} regex={PASSWORD_REGEX} />
+                    <InputForm type={"text"} label={LoginData.login} placeholder={LoginData.login} regex={LOGIN_REGEX} getValue={() => {}} />
+                    <InputForm type={"password"} label={LoginData.password} placeholder={LoginData.password} regex={PASSWORD_REGEX} getValue={() => {}}  />
 
                     <div className={"space-x-2 flex items-center justify-end"}>
                         <button className={""} type={"button"} onClick={() => setViewPassword(!viewPassword)}>
